@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кулинария</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Мир кухни</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="sport.html">Спорт</a></li>
+          <li><a href="weather.html">Погода</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="cooking">
+      <div class="container">
+        <h2>Случайный рецепт</h2>
+        <button id="recipeBtn">Показать рецепт</button>
+        <p id="recipeOutput" class="greet-message"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Командный сайт — Кухня</p>
+    </div>
+  </footer>
+
+  <script>
+    const recipes = [
+      "Паста с томатным соусом",
+      "Салат Цезарь",
+      "Блины с джемом",
+      "Омлет с овощами",
+      "Суп-пюре из тыквы"
+    ];
+    document.getElementById("recipeBtn").addEventListener("click", () => {
+      const randomRecipe = recipes[Math.floor(Math.random() * recipes.length)];
+      document.getElementById("recipeOutput").textContent = `Сегодня готовим: ${randomRecipe}`;
+    });
+  </script>
+</body>
+</html>
