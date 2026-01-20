@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Спорт</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Мир спорта</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="cooking.html">Кухня</a></li>
+          <li><a href="weather.html">Погода</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="sport">
+      <div class="container">
+        <h2>Попробуй случайный вид спорта!</h2>
+        <button id="sportBtn">Показать спорт</button>
+        <p id="sportOutput" class="greet-message"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Командный сайт — Спорт</p>
+    </div>
+  </footer>
+
+  <script>
+    const sports = ["Футбол", "Баскетбол", "Теннис", "Волейбол", "Плавание", "Бег", "Йога"];
+    document.getElementById("sportBtn").addEventListener("click", () => {
+      const randomSport = sports[Math.floor(Math.random() * sports.length)];
+      document.getElementById("sportOutput").textContent = `Сегодня попробуйте: ${randomSport}!`;
+    });
+  </script>
+</body>
+</html>
