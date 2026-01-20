@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Погода и время</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Погода и время</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="sport.html">Спорт</a></li>
+          <li><a href="cooking.html">Кухня</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="weather">
+      <div class="container">
+        <h2>Текущее время</h2>
+        <p id="timeOutput" class="greet-message"></p>
+        <button id="refreshTimeBtn">Обновить время</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Командный сайт — Погода</p>
+    </div>
+  </footer>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString("ru-RU");
+      document.getElementById("timeOutput").textContent = `Сейчас: ${timeString}`;
+    }
+    document.getElementById("refreshTimeBtn").addEventListener("click", updateTime);
+    updateTime(); // Показываем время сразу при загрузке
+  </script>
+</body>
+</html>
